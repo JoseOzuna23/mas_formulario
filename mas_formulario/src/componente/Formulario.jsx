@@ -16,7 +16,7 @@ return (
         <div className="mb-2">
             <label htmlFor="exampleInputEmail1" className="form-label">Nombre</label>
             <input onChange={(evento) => setNombre(evento.target.value)} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>    
-            {(getNombre.length <= 2 && getNombre !== "") ? <p className='text-danger'> EL nombre tiene que tener almenos 2 caracteres</p> : null}
+            {(getNombre.length < 2 && getNombre !== "") ? <p className='text-danger'> EL nombre tiene que tener almenos 2 caracteres</p> : null}
         </div>
 
         <div className="mb-2">
@@ -34,13 +34,13 @@ return (
         <div className="mb-2 form-check">            
             <label className="form-check-label" htmlFor="exampleCheck1">Contraseña</label>
             <input onChange={(evento) => setContraseña(evento.target.value)} type="password" className="form-control" id="exampleInputPassword1"/>
-            {(getContraseña.length <= 8 && getContraseña !== "") ? <p className='text-danger'> La Contraseña tiene que tener 8 caracteres o mas</p> : null}
+            {(getContraseña.length < 8 && getContraseña !== "") ? <p className='text-danger'> La Contraseña tiene que tener 8 caracteres o mas</p> : null}
         </div>
 
         <div className="mb-2 form-check">            
             <label className="form-check-label" htmlFor="exampleCheck1">Confirmar Contraseña</label>
             <input onChange={(evento) => setContcont (evento.target.value)} type="password" className="form-control" id="exampleInputPassword1"/>
-            {(getContcont.length <= 8 && getContcont !== "") ? <p className='text-danger'> La Contraseña tiene que tener 8 caracteres o mas</p> : null}
+            {(getContcont.length < 8 && getContcont !== "") ? <p className='text-danger'> La Contraseña tiene que tener 8 caracteres o mas</p> : null}
         </div>
         <button type="submit" className="btn btn-primary">Submit</button>
     </form>
